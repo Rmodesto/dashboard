@@ -54,6 +54,9 @@ export async function createInvoice(formData: FormData) {
 //Calling revalidatePath to clear the client cache and make a new server request.
 //Calling redirect to redirect the user to the invoice's page.
 export async function updateInvoice(id: string, formData: FormData) {
+    throw new Error('Failed to Delete Invoice');
+
+    
     const { customerId, amount, status } = UpdateInvoice.parse({
       customerId: formData.get('customerId'),
       amount: formData.get('amount'),
@@ -81,6 +84,8 @@ export async function updateInvoice(id: string, formData: FormData) {
 }
 
   export async function deleteInvoice(id: string) {
+    throw new Error('Failed to Delete Invoice');
+
     try {
     await sql`DELETE FROM invoices WHERE id = ${id}`;
     revalidatePath('/dashboard/invoices');

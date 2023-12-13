@@ -151,6 +151,7 @@ export async function fetchInvoicesPages(query: string) {
 }
 
 export async function fetchInvoiceById(id: string) {
+ 
   try {
     const data = await sql<InvoiceForm>`
       SELECT
@@ -167,7 +168,7 @@ export async function fetchInvoiceById(id: string) {
       // Convert amount from cents to dollars
       amount: invoice.amount / 100,
     }));
-
+   
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);
