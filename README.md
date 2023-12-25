@@ -30,3 +30,6 @@ Frontend: Next.js, TailwindCSS
 Backend: Node.js
 Database: PostgreSQL
 Others: React Server Components, SEO Techniques
+
+Example Login : Email: user@nextmail.com
+Password: 123456 
